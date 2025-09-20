@@ -1,0 +1,72 @@
+.nav.float-left.search-dropdown-box.before-input-box input#input_values {
+    border-radius: 50px;
+    padding: 22px;
+    border: 2px solid #ccc;
+    color: #000 !important;
+}
+.before-input-box button.btn {
+    padding: 12px 30px 12px 30px;
+    top: 0px !important;
+    position: absolute !important;
+    right: 0px !important;
+    border-radius: 0px 50px 50px 0px;
+    background: #085694 !important;
+}
+.before-input-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+div#lead-search-results, div#lead-search-results2 {
+    width: 100%;
+}
+.before-input-box .dropdown-menu.show {
+display: inline-block;
+width: 98% !important;
+top: 40px;
+}
+.before-input-box .notifications .drop-scroll {
+    display: inline-block;
+    width: 100%;
+}
+.Interviewee-info {
+color: black !important; /* Add this line to change the text color to black */
+}
+.before-input-box .notifications .drop-scroll {
+height: 350px;
+background: #f3f3f3;
+}
+
+.topnav-dropdown-header-lead {
+    background-color: #16bcdc; /* Primary blue color */
+    color: white; /* Text color */
+    padding: 10px 10px; /* Padding for spacing */
+    border-bottom: 1px solid #eaeaea; /* Subtle bottom border */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 40px; /* Set a height to vertically center the text */
+}
+
+.topnav-dropdown-header-lead span {
+    font-size: 14px; /* Font size for the text */
+    font-weight: bold; /* Bold font weight */
+}
+.topnav-dropdown-footer {
+    border-top: 1px solid #eee;
+    /* background: #16bcdc; */
+    height: 40px;
+}
+.topnav-dropdown-footer a {
+    font-size: 14px;
+    /* color: #fff; */
+}
+.notifications ul.notification-list>li a {
+    border: 1px solid #fff;
+    transition: 0.4s ease-in-out;
+    border-radius: 4px;
+}
+.notifications ul.notification-list>li a:hover {
+    border: 1px solid green;
+}

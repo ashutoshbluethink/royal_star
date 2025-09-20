@@ -1,0 +1,100 @@
+.search-dropdown-box .top-nav-search input.dropdown-toggle.nav-link.form-control {
+    max-width: 600px;
+    min-width: 600px;
+    height: 50px;
+    border-radius: 0px;
+    margin-top: 4px;
+}
+
+.search-dropdown-box .top-nav-search {
+    position: relative;
+}
+
+.search-dropdown-box .top-nav-search button.btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: #16bcdc;
+    color: #fff;
+}
+
+.search-dropdown-box #search-results {
+    right: 0px;
+}
+
+.search-dropdown-box .notifications .drop-scroll {
+    height: 400px;
+    width: 100%;
+    overflow-y: auto; /* Added to enable scrolling */
+}
+
+.search-dropdown-box span.noti-title {
+    color: #0068c9;
+}
+
+.search-dropdown-box .noti-time {
+    margin-top: 5px;
+}
+
+.search-dropdown-box p.noti-time span {
+    color: #222 !important;
+    font-weight: bolder;
+}
+
+.notification-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.media {
+    display: flex;
+    align-items: center;
+}
+
+.media-body {
+    flex: 1;
+}
+
+.noti-details {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.noti-title {
+    color: #007bff;
+}
+
+.badge {
+    margin-left: 5px;
+}
+
+.notification-time {
+    color: #6c757d;
+}
+
+.candidate-info {
+    margin-top: 5px;
+}
+
+.candidate-info span {
+    font-weight: bold;
+    color: #c29696;
+}
+.Interviewee-info {
+    margin-top: 5px;
+}
+
+.Interviewee-info span {
+    font-weight: bold;
+    color: #333;
+}
+.search-dropdown-box .candidate-info span.notification-time {
+    color: #666;
+}
+.search-dropdown-box li.notification-message {
+    border-bottom: 1px solid #ccc !important;
+    border-top: 0px !important;
+}
+

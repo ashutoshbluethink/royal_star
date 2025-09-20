@@ -1,0 +1,20 @@
+
+    svg {
+        overflow: hidden;
+        vertical-align: middle;
+        height: 27px;
+        }
+    element.style {
+        display: none;
+    }
+    .disable-next-prev .flex.justify-between.flex-1.sm\:hidden {
+    display: none;
+}
+.disable-next-prev .pagination {
+    display: block;
+}
+.disable-next-prev .pagination .hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
