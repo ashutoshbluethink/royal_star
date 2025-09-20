@@ -15,7 +15,16 @@
 		@if(auth()->user()->role != 3)
 			<ul class="nav float-left search-dropdown-box">
 				<li class="nav-item dropdown d-none d-sm-block">
-					<div class="top-nav-search">
+<center>
+					 <div class=" col-12 head-joining">
+                    
+                    <h2 class="text-primary text-uppercase" style="font-family: 'Arial', sans-serif; font-weight: bold;">
+                        النجم الملكي للاستشارات الادارية
+                    </h2>
+                    <h5 class="text-muted font-weight-bold">ROYAL STAR MANAGEMENT CONSULTANCY</h5>
+                   
+                </div> </center>
+					<!-- <div class="top-nav-search">
 						<input class="dropdown-toggle nav-link form-control" data-toggle="dropdown" type="text" class="dropdown-toggle nav-link" placeholder="Search here" onkeyup="liveSearch()">
 						<button class="btn" type="submit"><i class="fa fa-search"></i></button>
 
@@ -32,7 +41,7 @@
 								<a href="{{ route('view.lead') }}">View all Leads</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</li>
 				<li>
 					<a href="index.html" class="mobile-logo d-md-block d-lg-none d-block"><img
