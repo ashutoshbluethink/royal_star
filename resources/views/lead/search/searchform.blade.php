@@ -67,19 +67,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="dropdown-menu notifications" id="lead-search-results2">
-                    <div class="topnav-dropdown-header-lead">
-                        <span>Search Results from Old Database</span>
-                    </div>
-                    <div class="drop-scroll">
-                        <ul class="notification-list" id="lead_search-result-list-old-data"></ul>
-                    </div>
-                    <div class="topnav-dropdown-footer">
-                        <a href="{{ route('alloldrecord') }}" target="_blank">View all Old Data</a>
-                    </div>
-                </div>
-            </div>
+
             <!-- <div id="loader-search" style="display: none;">
                 <div class="spinner-border text-primary" role="status">
                     <span class="sr-only">Loading...</span>

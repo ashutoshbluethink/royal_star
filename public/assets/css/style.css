@@ -145,7 +145,7 @@ textarea.form-control {
 }
 
 .table-striped>tbody>tr:nth-of-type(2n+1) {
-    background-color: #e4f2f3
+    background-color: #e4f1ff
 }
 
 table.table td .avatar {
@@ -502,8 +502,8 @@ div.dataTables_wrapper div.dataTables_paginate {
 }
 
 .btn-primary {
-    background-color: #2fdf84;
-    border: 1px solid #2fdf84
+    background-color: #0164a3;
+    border: 1px solid #0164a3
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
@@ -516,8 +516,8 @@ div.dataTables_wrapper div.dataTables_paginate {
 .btn-primary.active,
 .btn-primary:active,
 .open>.dropdown-toggle.btn-primary {
-    background-color: #22c571;
-    border: 1px solid #22c571
+    background-color: #0164a3;
+    border: 1px solid #0164a3
 }
 
 .btn-primary.active.focus,
@@ -561,8 +561,8 @@ div.dataTables_wrapper div.dataTables_paginate {
 }
 
 .btn-success {
-    background-color: #55ce63;
-    border: 1px solid #55ce63
+    background-color: #0164a3;
+    border: 1px solid #0164a3
 }
 
 .btn-success:hover,
@@ -654,13 +654,13 @@ div.dataTables_wrapper div.dataTables_paginate {
 
 .btn-search {
     color: #fff;
-    background: linear-gradient(180deg, #2FDF84 0%, #8944D7 100%);
+    background: linear-gradient(180deg, #0164a3 0%, #8944D7 100%);
     border: 1px solid transparent
 }
 
 .btn-search:not(:disabled):not(.disabled):active {
     color: #fff;
-    background: linear-gradient(180deg, #8944D7 0%, #2FDF84 100%);
+    background: linear-gradient(180deg, #8944D7 0%, #0164a3 100%);
     border: 1px solid transparent
 }
 
@@ -670,7 +670,7 @@ div.dataTables_wrapper div.dataTables_paginate {
 .btn-search:active,
 .open>.dropdown-toggle.btn-search {
     color: #fff;
-    background: linear-gradient(180deg, #8944D7 0%, #2FDF84 100%);
+    background: linear-gradient(180deg, #8944D7 0%, #0164a3 100%);
     border: 1px solid transparent
 }
 
@@ -684,7 +684,7 @@ div.dataTables_wrapper div.dataTables_paginate {
 .open>.dropdown-toggle.btn-search:focus,
 .open>.dropdown-toggle.btn-search:hover {
     color: #fff;
-    background: linear-gradient(180deg, #8944D7 0%, #2FDF84 100%);
+    background: linear-gradient(180deg, #8944D7 0%, #0164a3 100%);
     border: 1px solid transparent
 }
 
@@ -1348,7 +1348,7 @@ label {
 }
 
 .sidebar-menu li a:hover {
-    color: #2fdf84
+    color: #0164a3
 }
 
 .sidebar-menu li a>.badge {
@@ -1369,13 +1369,13 @@ label {
 
 .sidebar-menu li.active a {
     color: #fff;
-    background: linear-gradient(180deg, #2FDF84 0%, #8944D7 100%);
+    background: linear-gradient(180deg, #0164a3 0%, #d4d4d5 100%);
     border-radius: 10px
 }
 
 .sidebar-menu li.submenu a.active.subdrop {
     color: #fff;
-    background: linear-gradient(180deg, #2FDF84 0%, #8944D7 100%);
+    background: linear-gradient(180deg, #0164a3 0%, #d4d4d5 100%);
     border-radius: 10px
 }
 
@@ -1437,7 +1437,7 @@ label {
 }
 
 .sidebar-menu ul ul a.active {
-    color: #2fdf84;
+    color: #0164a3;
     text-decoration: underline
 }
 
@@ -1590,7 +1590,7 @@ label {
     border-style: solid;
     border-width: 0;
     border-left-width: 5px;
-    border-image: linear-gradient(180deg, #2FDF84 0%, #8944D7 100%) 1
+    border-image: linear-gradient(180deg, #0164a3 0%, #d4d4d5 100%) 1
 }
 
 .page-header .row {
@@ -1768,7 +1768,7 @@ label {
 
 .page-header a,
 .profile-content a {
-    color: #373d3f
+    color: #ffffff
 }
 
 .page-content {
