@@ -178,6 +178,75 @@
                         </div>
                     </div>
 
+                     <!-- Terms and Conditions -->
+                    <h5 class="mb-3">Terms and Conditions</h5>
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Accept Terms:</label>
+                        <div class="col-md-4">
+                            <input type="checkbox" name="accept_terms" id="accept_terms">
+                            <label for="accept_terms">I have read and agree to the Terms and Conditions</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-link" id="toggle_terms">Read Full Terms & Conditions</button>
+                        </div>
+                        <div id="terms_text" style="display:none;">
+                            <p>
+                                <!-- Full Terms and Conditions Text -->
+                                <strong>Term and Conditions:</strong><br>
+                                The company will not be held accountable if you cease work without a legitimate justification. The company shall not assume any responsibility for the consequences if you find yourself in a conflict with someone or participate in any unlawful activities. <br><br>
+
+                                We won't be held responsible once the deployment with the hiring company takes place.<br><br>
+
+                                The candidate is required to follow the rules and regulations set by the hiring company.<br><br>
+
+                                <strong>Refund and Relocation Clause:</strong><br>
+                                1) Initial Deployment: The initial deployment of the employee to the designated position shall be completed within the mutually agreed time frame. Failure or refusal by the employee to join the assigned role without valid justification shall constitute a breach of contract and may result in appropriate legal and administrative actions as per company policy.<br><br>
+
+                                2) Refund and Relocation: Once the employee has been deployed or commenced their first job assignment, they will have no entitlement to any refund, transfer, or relocation, regardless of personal or professional reasons. The company is only liable to refund the payment if the company fails to provide a job to the client as per the agreed Terms.<br><br>
+
+                                <strong>Legal Action:</strong><br>
+                                If the Employee fails to fulfill their obligations under this agreement, including but not limited to refusing to complete the assigned job, abandoning the job without a valid reason, or seeking refund or relocation after commencement of work, the Recruiter reserves the right to take legal action against the Employee for breach of contract.<br><br>
+
+                                <!-- Continue the rest of the terms here -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Office Use Section -->
+                    <h5 class="mb-3" style="color:red;">FOR OFFICE USE</h5>
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Remarks:</label>
+                        <div class="col-md-4">
+                            <textarea name="remarks" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <label class="col-md-2 col-form-label">Date:</label>
+                        <div class="col-md-4">
+                            <input type="date" name="office_date" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Emp No #:</label>
+                        <div class="col-md-4">
+                            <input type="text" name="emp_no" class="form-control">
+                        </div>
+
+                        <label class="col-md-2 col-form-label">HR Name:</label>
+                        <div class="col-md-4">
+                            <input type="text" name="hr_name" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">Signature:</label>
+                        <div class="col-md-4">
+                            <input type="file" name="hr_signature" class="form-control">
+                        </div>
+                    </div>
                     <!-- Actions -->
                     <div class="form-group text-center mt-4">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -189,4 +258,17 @@
         </form>
     </div>
 </div>
+<script>
+    // Toggle the full terms and conditions text
+    document.getElementById('toggle_terms').addEventListener('click', function() {
+        var termsText = document.getElementById('terms_text');
+        if (termsText.style.display === "none") {
+            termsText.style.display = "block";
+            this.textContent = "Read Less";
+        } else {
+            termsText.style.display = "none";
+            this.textContent = "Read Full Terms & Conditions";
+        }
+    });
+</script>
 @endsection
