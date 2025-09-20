@@ -179,10 +179,10 @@ function isActiveRoute($routeName)
             <li><a href="#">Payment Verification</a></li>
             <li><a href="#">Hiring Pathway (Inside/Outside)</a></li>
             <li><a href="#">Interview Scheduling</a></li>
-            <li><a href="#">Joining Form Management</a></li>
+            <li><a href="{{ route('adminhr.joiningForm') }}">Joining Form Management</a></li>
             <li><a href="#">Deploy Form Management</a></li>
             <li><a href="#">HR Accommodation</a></li>
-            <li><a href="#">Employee History</a></li>
+            <li><a href="{{ route('adminhr.employeHistoryForm') }}">Employee History</a></li>
             <li><a href="#">Terms & Conditions</a></li>
             <li><a href="#">Daily HR Progress</a></li>
           </ul>

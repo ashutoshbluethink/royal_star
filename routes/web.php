@@ -32,6 +32,7 @@ use App\Http\Controllers\PerformanceDashboard\CreateTargetController;
 use App\Http\Controllers\PerformanceDashboard\PerfSalesTeamLeadViewController;
 use App\Http\Controllers\PerformanceDashboard\ClosedLeadsViewController;
 use App\Http\Controllers\PerformanceDashboard\RunningProjectsByVendorController;
+use App\Http\Controllers\AdminHr\AdminHrController;
 
 /*
 |--------------------------------------------------------------------------
@@ -229,7 +230,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/add-vendor', [VendorController::class, 'store'])->name('add.vendor.submit');
     Route::get('/vendors/{vendor}', [VendorController::class, 'edit'])->name('vendors.editVendor');
     Route::post('/vendors/update', [VendorController::class, 'update'])->name('vendors.updateVendor');
+/*joing form*/
 
+    Route::get('/joining-form', [AdminHrController::class, 'joiningForm'])->name('adminhr.joiningForm');
+    Route::get('/consultancy-form', [AdminHrController::class, 'consultancyForm'])->name('adminhr.consultancyForm');
+    Route::get('/employe-history-form', [AdminHrController::class, 'employeHistoryForm'])->name('adminhr.employeHistoryForm');
     /*
     |--------------------------------------------------------------------------
     | user profile
