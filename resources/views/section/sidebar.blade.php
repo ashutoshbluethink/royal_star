@@ -1,8 +1,6 @@
 <?php
-// Function to check if a route is active
 function isActiveRoute($routeName)
 {
-
     return request()->routeIs($routeName) ? 'active' : '';
 }
 
