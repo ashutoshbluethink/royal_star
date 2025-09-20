@@ -16,6 +16,13 @@
     </a>
 </div>
 
+
+
+
+
+
+
+
 <!-- Sales Team Section -->
 <h4 class="mb-3">💼 Sales Team</h4>
 <div class="row">
@@ -87,13 +94,6 @@
         @php $colorIndex++; @endphp
     @endforeach
 </div>
-
-
-<!-- ==========================  Target Table Section Start  ============================= -->
- 
-
-
-<!-- ==========================  Target Table Section end  ============================= --> 
 
 
 <div class="row">

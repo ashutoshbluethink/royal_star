@@ -16,6 +16,8 @@ function isActiveRoute($routeName)
                 </a>
             </div>
             <ul class="sidebar-ul">
+                        <li class="menu-title">Main Navigation</li>
+
                 <!-- <li class="menu-title">Menu</li> -->
                 <li class="{{ isActiveRoute('dashboard') }}">
                     <a href="{{ route('dashboard') }}">
@@ -138,19 +140,139 @@ function isActiveRoute($routeName)
                 }
                 ?>
                 
-                <!-- Email Validation -->
+        <!-- ===== New Royal Star Menus ===== -->
 
-                <!-- <li class="submenu">
-                    <a href="#">
-                        <img src="{{ asset('assets/img/sidebar/icon-19.png') }}" alt="icon">
-                        <span> Email Validation</span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <ul class="list-unstyled" style="display: none;">
-                    <li><a href="{{ route('email.form') }}" class="{{ isActiveRoute('email.form') }}"><span>Email Validation Form</span></a></li>
-                    <li><a href="{{ route('email.config') }}" class="{{ isActiveRoute('email.config') }}"><span>Email Configuration</span></a></li> 
-                </li> -->
-                <!-- Email Validation -->
+        <!-- Super User -->
+        <li>
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-1.png') }}" alt="icon">
+            <span>Super User Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Sales -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-18.png') }}" alt="icon">
+            <span>Sales & Client Management</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Client Leads</a></li>
+            <li><a href="#">Applications Tracking</a></li>
+            <li><a href="#">Payment Collection</a></li>
+            <li><a href="#">Commission Reports</a></li>
+            <li><a href="#">Vacancy Access</a></li>
+            <li><a href="#">Sales Analytics</a></li>
+          </ul>
+        </li>
+
+        <!-- Admin / HR -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-3.png') }}" alt="icon">
+            <span>Admin & HR</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Client File Management</a></li>
+            <li><a href="#">Payment Verification</a></li>
+            <li><a href="#">Hiring Pathway (Inside/Outside)</a></li>
+            <li><a href="#">Interview Scheduling</a></li>
+            <li><a href="#">Joining Form Management</a></li>
+            <li><a href="#">Deploy Form Management</a></li>
+            <li><a href="#">HR Accommodation</a></li>
+            <li><a href="#">Employee History</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Daily HR Progress</a></li>
+          </ul>
+        </li>
+
+        <!-- Finance -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-7.png') }}" alt="icon">
+            <span>Finance</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Payment Verification & Reconciliation</a></li>
+            <li><a href="#">Payment Records</a></li>
+            <li><a href="#">Salary Structure</a></li>
+            <li><a href="#">Commission Structure</a></li>
+            <li><a href="#">Financial Reporting</a></li>
+            <li><a href="#">Budgeting & Forecasting</a></li>
+            <li><a href="#">Audit Trail</a></li>
+          </ul>
+        </li>
+
+        <!-- Marketing -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-18.png') }}" alt="icon">
+            <span>Marketing</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Vacancy Management</a></li>
+            <li><a href="#">External Company Communication</a></li>
+            <li><a href="#">Interview Arrangements</a></li>
+            <li><a href="#">Social Media Planner</a></li>
+            <li><a href="#">Daily Social Media Work</a></li>
+            <li><a href="#">Performance Analytics</a></li>
+            <li><a href="#">Resource Library</a></li>
+          </ul>
+        </li>
+
+        <!-- IT -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-2.png') }}" alt="icon">
+            <span>IT & Assets</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Device Allocation / Inventory</a></li>
+            <li><a href="#">Access Provisioning</a></li>
+            <li><a href="#">SIM Card Management</a></li>
+            <li><a href="#">Support Ticket System</a></li>
+            <li><a href="#">Asset Lifecycle</a></li>
+          </ul>
+        </li>
+
+        <!-- Deployment -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-14.png') }}" alt="icon">
+            <span>Deployment</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Client Assignment</a></li>
+            <li><a href="#">Vacancy Coordination</a></li>
+            <li><a href="#">Driver Arrangement & Tracking</a></li>
+            <li><a href="#">Deployment Status</a></li>
+            <li><a href="#">Temporary Accommodation</a></li>
+            <li><a href="#">Feedback & Issue Reporting</a></li>
+          </ul>
+        </li>
+
+        <!-- Drivers -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-19.png') }}" alt="icon">
+            <span>Drivers</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Assigned Drop-offs</a></li>
+            <li><a href="#">Route Optimization</a></li>
+            <li><a href="#">Status Updates</a></li>
+            <li><a href="#">Vehicle Info & Maintenance</a></li>
+            <li><a href="#">Direct Communication</a></li>
+          </ul>
+        </li>
+        <!-- ===== End Royal Star Menus ===== -->
               
             </ul>
         </div>
