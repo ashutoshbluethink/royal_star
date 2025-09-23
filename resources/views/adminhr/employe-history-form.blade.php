@@ -6,15 +6,15 @@
 <div class="page-wrapper">
     <div class="content container-fluid">
 
-        <div class="page-header">
-            <h5 class="text-uppercase">Employee Previous Employment History</h5>
+        <div class="col-lg-12">
+            <h5 class="text-uppercase page-title employment-history-head-s">Employee Previous Employment History</h5>
         </div>
 
         <form action="#" method="POST">
             @csrf
             <div class="card">
                 <div class="card-body">
-                    
+
                     <!-- Personal Information -->
                     <h5 class="mb-3">Personal Information</h5>
                     <div class="form-group row">

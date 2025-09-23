@@ -1,11 +1,11 @@
 
 <div class="header-outer">
-	<div class="header">
-		<a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fas fa-bars"
+	<div class="header header-fixed-section">
+		{{-- <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fas fa-bars"
 				aria-hidden="true"></i></a>
 		<a id="toggle_btn" class="float-left" href="javascript:void(0);">
 			<img src="{{ asset('assets/img/sidebar/icon-21.png') }}" alt="">
-		</a>
+		</a> --}}
 		@php
 			if (!auth()->check() || auth()->user()->role === null) {
 				header("Location: " . route('login'));
@@ -17,12 +17,12 @@
 				<li class="nav-item dropdown d-none d-sm-block">
 <center>
 					 <div class=" col-12 head-joining">
-                    
+
                     <h2 class="text-primary text-uppercase" style="font-family: 'Arial', sans-serif; font-weight: bold;">
                         النجم الملكي للاستشارات الادارية
                     </h2>
                     <h5 class="text-muted font-weight-bold">ROYAL STAR MANAGEMENT CONSULTANCY</h5>
-                   
+
                 </div> </center>
 					<!-- <div class="top-nav-search">
 						<input class="dropdown-toggle nav-link form-control" data-toggle="dropdown" type="text" class="dropdown-toggle nav-link" placeholder="Search here" onkeyup="liveSearch()">
@@ -34,7 +34,7 @@
 							</div>
 							<div class="drop-scroll">
 								<ul class="notification-list" id="search-result-list">
-									
+
 								</ul>
 							</div>
 							<div class="topnav-dropdown-footer">
@@ -62,7 +62,7 @@
 						@endif
 						<span class="status online"></span>
 					</span>
-					
+
 				</a>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="{{ route('user.profile') }}">My Profile</a>

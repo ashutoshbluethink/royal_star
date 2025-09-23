@@ -3,6 +3,210 @@
     | Royal Star • Admin / Super User Dashboard
     |--------------------------------------------------------------------------
 -->
+{{-- ===== Module Overview Boxes ===== --}}
+<style>
+  .mod-grid { display:grid; grid-template-columns: repeat(12,1fr); gap:16px; }
+  @media (max-width:1199.98px){ .mod-grid{ grid-template-columns: repeat(8,1fr);} }
+  @media (max-width:767.98px){ .mod-grid{ grid-template-columns: repeat(4,1fr);} }
+  @media (max-width:575.98px){ .mod-grid{ grid-template-columns: repeat(2,1fr);} }
+
+  .mod-card {
+    grid-column: span 6; /* 2 per row on desktop */
+    position: relative; overflow: hidden;
+    border-radius: 16px; background:#fff;
+    border:1px solid #e9eef7; box-shadow:0 6px 20px rgba(15,23,42,.06);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+  }
+  .mod-card:hover{ transform: translateY(-3px); box-shadow:0 10px 26px rgba(15,23,42,.1); border-color:#d8e2fb; }
+  .mod-card .ink {
+    position:absolute; inset:0; pointer-events:none; opacity:.12;
+    background: radial-gradient(1200px 200px at 0% 0%, var(--grad) 0, transparent 60%);
+  }
+  .mod-body{ padding:16px; position:relative; z-index:1; }
+  .mod-top{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+  .mod-icon{
+    width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:1.1rem; background: var(--icon-bg, #6366f1);
+    box-shadow: 0 6px 18px rgba(99,102,241,.35);
+  }
+  .mod-title{ font-weight:700; color:#0f172a; margin:0; line-height:1.2; }
+  .mod-sub{ color:#64748b; font-size:.85rem; }
+  .mod-kpis{ display:flex; gap:16px; flex-wrap:wrap; margin:10px 0 12px; }
+  .chip { display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:999px; background:#eef2ff; font-size:.78rem; color:#334155; }
+  .mini { font-size:.8rem; color:#475569; }
+  .mini strong{ color:#0f172a; }
+  .bar{
+    height:8px; border-radius:999px; background:#eef2f7; overflow:hidden; margin:4px 0 2px;
+  }
+  .bar > i{ display:block; height:100%; width:var(--v,40%); background:linear-gradient(90deg,var(--b1),var(--b2)); border-radius:999px; }
+  .mod-actions{ display:flex; gap:8px; flex-wrap:wrap; }
+  .mod-actions .btn{ border-radius:10px; padding:.4rem .65rem; font-size:.8rem; }
+  .badge-soft{ background:#f1f5ff; color:#3b82f6; border:1px solid #dbe7ff; }
+  .badge-soft-amber{ background:#fff7ed; color:#f59e0b; border:1px solid #fde7c7; }
+  .badge-soft-green{ background:#ecfdf5; color:#10b981; border:1px solid #c9f3e5; }
+
+  /* span widths for different breakpoints */
+  .span-12{ grid-column: span 12; }
+  .span-6{ grid-column: span 6; }
+  .span-4{ grid-column: span 4; }
+  @media (max-width:1199.98px){ .span-6{ grid-column: span 8; } .span-4{ grid-column: span 8; } }
+  @media (max-width:767.98px){ .span-6, .span-4{ grid-column: span 4; } }
+  @media (max-width:575.98px){ .span-6, .span-4{ grid-column: span 2; } }
+</style>
+
+<div class="mod-grid">
+
+  {{-- 1) Department Dashboards --}}
+  <div class="mod-card span-6" style="--grad:#4f46e5; --icon-bg:#4f46e5;">
+    <div class="ink"></div>
+    <div class="mod-body">
+      <div class="mod-top">
+        <div class="mod-icon"><i class="fas fa-table-columns"></i></div>
+        <div>
+          <h5 class="mod-title">Department Dashboards</h5>
+          <div class="mod-sub">Sales • Admin • Finance • Marketing • IT • Deployment • Drivers</div>
+        </div>
+        <span class="ml-auto badge badge-soft">7 spaces</span>
+      </div>
+      <div class="mod-kpis">
+        <div class="mini"><i class="far fa-eye mr-1"></i> Active users: <strong>128</strong></div>
+        <div class="mini"><i class="far fa-clock mr-1"></i> Avg load: <strong>0.8s</strong></div>
+        <div class="mini"><i class="far fa-bell mr-1"></i> Alerts: <strong>3</strong></div>
+      </div>
+      <div class="bar" style="--v:72%; --b1:#818cf8; --b2:#22d3ee"></div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="text-muted small">Adoption</div>
+        <div class="text-dark small font-weight-600">72%</div>
+      </div>
+      <div class="mod-actions mt-3">
+        <a href="#/dept/sales" class="btn btn-primary btn-sm"><i class="fas fa-chart-line mr-1"></i> Open Sales</a>
+        <a href="#/dept/finance" class="btn btn-outline-primary btn-sm">Finance</a>
+        <a href="#/dept/marketing" class="btn btn-outline-primary btn-sm">Marketing</a>
+      </div>
+    </div>
+  </div>
+
+  {{-- 2) Client Management --}}
+  <div class="mod-card span-6" style="--grad:#16a34a; --icon-bg:#16a34a;">
+    <div class="ink"></div>
+    <div class="mod-body">
+      <div class="mod-top">
+        <div class="mod-icon"><i class="fas fa-user-check"></i></div>
+        <div>
+          <h5 class="mod-title">Client Management</h5>
+          <div class="mod-sub">From application to deployment, all in one place</div>
+        </div>
+        <span class="ml-auto badge badge-soft-green">SLA 24h</span>
+      </div>
+      <div class="mod-kpis">
+        <div class="mini"><i class="far fa-folder-open mr-1"></i> In Progress: <strong>142</strong></div>
+        <div class="mini"><i class="far fa-file mr-1"></i> New Today: <strong>18</strong></div>
+        <div class="mini"><i class="far fa-check-circle mr-1"></i> Approved: <strong>76%</strong></div>
+      </div>
+      <div class="bar" style="--v:56%; --b1:#34d399; --b2:#60a5fa"></div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="text-muted small">Pipeline Health</div>
+        <div class="text-dark small font-weight-600">56%</div>
+      </div>
+      <div class="mod-actions mt-3">
+        <a href="#/clients" class="btn btn-success btn-sm"><i class="fas fa-users mr-1"></i> View Clients</a>
+        <a href="#/applications/new" class="btn btn-outline-success btn-sm">+ New Application</a>
+        <a href="#/documents" class="btn btn-outline-success btn-sm">Documents</a>
+      </div>
+    </div>
+  </div>
+
+  {{-- 3) Financial Tracking --}}
+  <div class="mod-card span-6" style="--grad:#0ea5e9; --icon-bg:#0ea5e9;">
+    <div class="ink"></div>
+    <div class="mod-body">
+      <div class="mod-top">
+        <div class="mod-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <div>
+          <h5 class="mod-title">Financial Tracking</h5>
+          <div class="mod-sub">Payments, reconciliation, and commission controls</div>
+        </div>
+        <span class="ml-auto badge badge-soft-amber">Pending 9</span>
+      </div>
+      <div class="mod-kpis">
+        <div class="mini"><i class="fas fa-sack-dollar mr-1"></i> Collections (Today): <strong>AED 18,500</strong></div>
+        <div class="mini"><i class="fas fa-rotate-left mr-1"></i> Refunds: <strong>AED 1,000</strong></div>
+        <div class="mini"><i class="fas fa-percent mr-1"></i> Commission (MTD): <strong>AED 190K</strong></div>
+      </div>
+      <div class="bar" style="--v:68%; --b1:#38bdf8; --b2:#22c55e"></div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="text-muted small">Reconciliation</div>
+        <div class="text-dark small font-weight-600">68% complete</div>
+      </div>
+      <div class="mod-actions mt-3">
+        <a href="#/finance" class="btn btn-info btn-sm text-white"><i class="fas fa-wallet mr-1"></i> Finance Hub</a>
+        <a href="#/finance/verify" class="btn btn-outline-info btn-sm">Verify Payments</a>
+        <a href="#/finance/commissions" class="btn btn-outline-info btn-sm">Commissions</a>
+      </div>
+    </div>
+  </div>
+
+  {{-- 4) Vacancy Management --}}
+  <div class="mod-card span-6" style="--grad:#ea580c; --icon-bg:#ea580c;">
+    <div class="ink"></div>
+    <div class="mod-body">
+      <div class="mod-top">
+        <div class="mod-icon"><i class="fas fa-briefcase"></i></div>
+        <div>
+          <h5 class="mod-title">Vacancy Management</h5>
+          <div class="mod-sub">Shared portal for Marketing ↔ Sales</div>
+        </div>
+        <span class="ml-auto badge badge-soft">Sync on</span>
+      </div>
+      <div class="mod-kpis">
+        <div class="mini"><i class="far fa-circle-dot mr-1"></i> Open: <strong>21</strong></div>
+        <div class="mini"><i class="far fa-comments mr-1"></i> Interviewing: <strong>8</strong></div>
+        <div class="mini"><i class="far fa-circle-check mr-1"></i> Filled (MTD): <strong>9</strong></div>
+      </div>
+      <div class="bar" style="--v:44%; --b1:#fb923c; --b2:#f472b6"></div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="text-muted small">Fill Rate</div>
+        <div class="text-dark small font-weight-600">44% this month</div>
+      </div>
+      <div class="mod-actions mt-3">
+        <a href="#/vacancies" class="btn btn-warning btn-sm text-white"><i class="fas fa-list mr-1"></i> View Vacancies</a>
+        <a href="#/vacancies/kanban" class="btn btn-outline-warning btn-sm">Kanban</a>
+        <a href="#/vacancies/new" class="btn btn-outline-warning btn-sm">+ New</a>
+      </div>
+    </div>
+  </div>
+
+  {{-- 5) Reporting & Analytics --}}
+  <div class="mod-card span-12" style="--grad:#6d28d9; --icon-bg:#6d28d9;">
+    <div class="ink"></div>
+    <div class="mod-body">
+      <div class="mod-top">
+        <div class="mod-icon"><i class="fas fa-chart-pie"></i></div>
+        <div>
+          <h5 class="mod-title">Reporting & Analytics</h5>
+          <div class="mod-sub">Unified KPIs across departments for data-driven decisions</div>
+        </div>
+        <span class="ml-auto badge badge-soft">Exports</span>
+      </div>
+      <div class="mod-kpis">
+        <div class="mini"><i class="far fa-file-excel mr-1"></i> Weekly Exec Pack</div>
+        <div class="mini"><i class="far fa-chart-bar mr-1"></i> KPI Scorecards</div>
+        <div class="mini"><i class="far fa-download mr-1"></i> PDF / Excel</div>
+      </div>
+      <div class="bar" style="--v:61%; --b1:#a78bfa; --b2:#60a5fa"></div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="text-muted small">Coverage</div>
+        <div class="text-dark small font-weight-600">61% of metrics wired</div>
+      </div>
+      <div class="mod-actions mt-3">
+        <a href="#/reports" class="btn btn-primary btn-sm"><i class="fas fa-chart-line mr-1"></i> Open Reports</a>
+        <a href="#/reports/export?fmt=pdf" class="btn btn-outline-primary btn-sm">Export PDF</a>
+        <a href="#/reports/export?fmt=xlsx" class="btn btn-outline-primary btn-sm">Export Excel</a>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <div class="row">
   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
@@ -47,450 +251,7 @@
 </div>
 
 
-<!-- --------------------------- -->
-
-<!-- deps (remove if already included) -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<style>
-  #map_acco_locations { height: 300px; border-radius: 8px; }
-</style>
-
-<div class="row">
-  <div class="col-lg-6 d-flex">
-    <div class="card flex-fill">
-      <div class="card-header"><div class="page-title">Accommodation Occupancy</div></div>
-      <div class="card-body"><div id="chart_acco_occupancy"></div></div>
-      <div class="card-footer small text-muted">Company Staff vs Temporary Clients</div>
-    </div>
-  </div>
-  <div class="col-lg-6 d-flex">
-    <div class="card flex-fill">
-      <div class="card-header"><div class="page-title">Accommodation Map</div></div>
-      <div class="card-body"><div id="map_acco_locations"></div></div>
-    </div>
-  </div>
-</div>
-
-<script>
-  // ========= Dummy data =========
-  // Split for donut
-  const occupancySplit = { companyStaff: 78, temporaryClients: 22 };
-
-  // Per-location breakdown (DXB, AUH, SHJ, RAK)
-  // totals and split per property (purely illustrative)
-  const properties = [
-    {
-      name: 'DXB Housing A',
-      coords: [25.2048, 55.2708],
-      totalBeds: 120,
-      occupied: 102,
-      staff: 86,
-      temp: 16
-    },
-    {
-      name: 'AUH Housing B',
-      coords: [24.4539, 54.3773],
-      totalBeds: 90,
-      occupied: 65,
-      staff: 48,
-      temp: 17
-    },
-    {
-      name: 'SHJ Housing C',
-      coords: [25.3463, 55.4209],
-      totalBeds: 70,
-      occupied: 46,
-      staff: 35,
-      temp: 11
-    },
-    {
-      name: 'RAK Housing D',
-      coords: [25.8007, 55.9762],
-      totalBeds: 60,
-      occupied: 35,
-      staff: 25,
-      temp: 10
-    }
-  ];
-
-  // ========= ApexCharts: Donut =========
-  (function renderOccupancyDonut() {
-    const series = [occupancySplit.companyStaff, occupancySplit.temporaryClients];
-    const labels = ['Company Staff', 'Temporary Clients'];
-
-    const chart = new ApexCharts(document.querySelector('#chart_acco_occupancy'), {
-      chart: { type: 'donut', height: 300 },
-      series,
-      labels,
-      legend: { position: 'bottom' },
-      dataLabels: { enabled: true },
-      tooltip: {
-        y: {
-          formatter: (val) => `${val}%`
-        }
-      },
-      // Convert counts to percentage for a nicer look (optional)
-      plotOptions: {
-        pie: {
-          donut: {
-            labels: {
-              show: true,
-              total: {
-                show: true,
-                label: 'Occupied',
-                formatter: () => (series[0] + series[1]) + '%'
-              }
-            }
-          }
-        }
-      }
-    });
-    chart.render();
-  })();
-
-  // ========= Leaflet Map =========
-  (function renderMap() {
-    const map = L.map('map_acco_locations').setView([25.2048, 55.2708], 8); // Center on Dubai
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18
-    }).addTo(map);
-
-    properties.forEach(p => {
-      const occPct = Math.round((p.occupied / p.totalBeds) * 100);
-      const popupHtml = `
-        <div style="min-width:200px">
-          <strong>${p.name}</strong><br/>
-          Beds: ${p.totalBeds}<br/>
-          Occupied: ${p.occupied} (${occPct}%)<br/>
-          Staff: ${p.staff} • Temporary: ${p.temp}
-        </div>`;
-      L.marker(p.coords).addTo(map).bindPopup(popupHtml);
-    });
-  })();
-</script>
-<!-- ------------------END------------------------ -->
-
 <!-- ===============Start================== -->
-<div class="row">
-  <div class="col-lg-6 col-md-12 col-12 d-flex">
-    <div class="card flex-fill">
-      <div class="card-header">
-        <div class="row align-items-center">
-          <div class="col-auto">
-            <div class="page-title">Upcoming Activities</div>
-          </div>
-          <div class="col text-right">
-            <div class="mt-sm-0 mt-2">
-              <button class="btn btn-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Create Task</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Filter</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Calendar View</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body dashboard-calendar">
-        <div id="calendar" class="overflow-hidden"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-6 col-md-12 col-12 d-flex">
-    <div class="card flex-fill">
-      <div class="card-header">
-        <div class="row align-items-center">
-          <div class="col-auto">
-            <div class="page-title">Total Members</div>
-          </div>
-          <div class="col text-right">
-            <div class="mt-sm-0 mt-2">
-              <button class="btn btn-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Export</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Refresh</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Settings</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body d-flex align-items-center justify-content-center overflow-hidden">
-        <div id="chart3"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-lg-6 col-md-12 col-12 d-flex">
-    <div class="card flex-fill">
-      <div class="card-header">
-        <div class="row align-items-center">
-          <div class="col-auto">
-            <div class="page-title">Revenue Monthwise</div>
-          </div>
-          <div class="col text-right">
-            <div class="mt-sm-0 mt-2">
-              <button class="btn btn-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Export</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Refresh</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Settings</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div id="chart4"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-6 d-flex">
-    <div class="card flex-fill">
-      <div class="card-header">
-        <div class="row align-items-center">
-          <div class="col-auto">
-            <div class="page-title">Deals List</div>
-          </div>
-          <div class="col text-right">
-            <div class="mt-sm-0 mt-2">
-              <button class="btn btn-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Export</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Refresh</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Settings</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="table-responsive">
-              <table class="table custom-table">
-                <thead class="thead-light">
-                  <tr>
-                    <th>Deal</th>
-                    <th>Stage</th>
-                    <th>Owner</th>
-                    <th>Region</th>
-                    <th>Amount</th>
-                    <th>Close Date</th>
-                    <th class="text-right">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a href="deal-detail.html" class="avatar bg-green">R</a> Renewal</td>
-                    <td>Negotiation</td>
-                    <td>Priya N.</td>
-                    <td>DXB</td>
-                    <td>AED 80,000</td>
-                    <td>20/10/2025</td>
-                    <td class="text-right">
-                      <a href="edit-deal.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                      <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="deal-detail.html" class="avatar bg-purple">N</a> New</td>
-                    <td>Proposal</td>
-                    <td>Arjun S.</td>
-                    <td>AUH</td>
-                    <td>AED 45,000</td>
-                    <td>02/11/2025</td>
-                    <td class="text-right">
-                      <a href="edit-deal.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                      <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="deal-detail.html" class="avatar bg-dark">U</a> Upsell</td>
-                    <td>Qualified</td>
-                    <td>Maryam K.</td>
-                    <td>SHJ</td>
-                    <td>AED 30,000</td>
-                    <td>12/11/2025</td>
-                    <td class="text-right">
-                      <a href="edit-deal.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                      <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="deal-detail.html" class="avatar bg-green">R</a> Renewal</td>
-                    <td>Contract Sent</td>
-                    <td>Omar H.</td>
-                    <td>DXB</td>
-                    <td>AED 60,000</td>
-                    <td>20/10/2025</td>
-                    <td class="text-right">
-                      <a href="edit-deal.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                      <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="deal-detail.html" class="avatar bg-purple">N</a> New</td>
-                    <td>Discovery</td>
-                    <td>Sameer T.</td>
-                    <td>AUH</td>
-                    <td>AED 25,000</td>
-                    <td>28/10/2025</td>
-                    <td class="text-right">
-                      <a href="edit-deal.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                      <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="deal-detail.html" class="avatar bg-dark">U</a> Upsell</td>
-                    <td>Qualified</td>
-                    <td>Lara V.</td>
-                    <td>RAK</td>
-                    <td>AED 18,500</td>
-                    <td>20/10/2025</td>
-                    <td class="text-right">
-                      <a href="edit-deal.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                      <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div> <!-- /.table-responsive -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- All Leads -->
-<div class="row">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <div class="row align-items-center">
-          <div class="col-sm-6">
-            <div class="page-title">All Leads</div>
-          </div>
-          <div class="col-sm-6 text-sm-right">
-            <div class="mt-sm-0 mt-2">
-              <button class="btn btn-outline-primary mr-2"><img src="assets/img/excel.png" alt=""><span class="ml-2">Excel</span></button>
-              <button class="btn btn-outline-danger mr-2"><img src="assets/img/pdf.png" alt="" height="18"><span class="ml-2">PDF</span></button>
-              <button class="btn btn-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Export</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Refresh</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Columns</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table custom-table">
-            <thead class="thead-light">
-              <tr>
-                <th>Name</th>
-                <th>Lead ID</th>
-                <th>Source</th>
-                <th>Owner</th>
-                <th>Mobile</th>
-                <th>Created On</th>
-                <th class="text-right">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h2>
-                    <a href="profile.html" class="avatar text-white"><img src="assets/img/profile/img-1.jpg" alt=""></a>
-                    <a href="profile.html">Parker <span></span></a>
-                  </h2>
-                </td>
-                <td>LD-0001</td>
-                <td>Website</td>
-                <td>Priya N.</td>
-                <td>+971-55-123-4567</td>
-                <td>20/09/2025</td>
-                <td class="text-right">
-                  <a href="edit-lead.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                  <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <h2>
-                    <a href="profile.html" class="avatar text-white"><img src="assets/img/profile/img-2.jpg" alt=""></a>
-                    <a href="profile.html">Smith <span></span></a>
-                  </h2>
-                </td>
-                <td>LD-0002</td>
-                <td>Referral</td>
-                <td>Arjun S.</td>
-                <td>+971-55-987-6543</td>
-                <td>20/09/2025</td>
-                <td class="text-right">
-                  <a href="edit-lead.html" class="btn btn-primary btn-sm mb-1"><i class="far fa-edit"></i></a>
-                  <button type="button" data-toggle="modal" data-target="#delete_employee" class="btn btn-danger btn-sm mb-1">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </td>
-              </tr>
-
-
-
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- New Customers -->
 <div class="row">

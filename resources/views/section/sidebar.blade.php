@@ -28,13 +28,6 @@ function isActiveRoute($routeName)
 
         <!-- ===== New Royal Star Menus ===== -->
 
-        <!-- Super User -->
-        <li>
-          <a href="#">
-            <img src="{{ asset('assets/img/sidebar/icon-1.png') }}" alt="icon">
-            <span>Super User Dashboard</span>
-          </a>
-        </li>
 
         <!-- Sales -->
         <li class="submenu">

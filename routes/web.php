@@ -333,4 +333,25 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/vendors/{id}', [RunningProjectsByVendorController::class, 'show'])->name('vendors.show');
     });
 
+
+    Route::view('/superuser', 'superuser.dashboard');
+
+Route::prefix('dept')->group(function () {
+  Route::view('/sales', 'departments.sales');
+  Route::view('/admin', 'departments.admin');
+  Route::view('/finance', 'departments.finance');
+  Route::view('/marketing', 'departments.marketing');
+  Route::view('/it', 'departments.it');
+  Route::view('/deployment', 'departments.deployment');
+  Route::view('/drivers', 'departments.drivers');
+});
+
+Route::prefix('module')->group(function () {
+  Route::view('/client-management', 'modules.client_management');
+  Route::view('/financial-tracking', 'modules.financial_tracking');
+  Route::view('/vacancy-management', 'modules.vacancy_management');
+  Route::view('/reporting-analytics', 'modules.reporting_analytics');
+});
+
+
 });
