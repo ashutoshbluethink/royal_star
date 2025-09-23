@@ -27,9 +27,10 @@ function isActiveRoute($routeName)
                 </li>
 
         <!-- ===== New Royal Star Menus ===== -->
-
-
-        <!-- Sales -->
+ <?php 
+                if($user->role == 1){
+                ?>
+                <!-- Sales -->
         <li class="submenu">
           <a href="#">
             <img src="{{ asset('assets/img/sidebar/icon-18.png') }}" alt="icon">
@@ -45,7 +46,7 @@ function isActiveRoute($routeName)
             <li><a href="#">Sales Analytics</a></li>
           </ul>
         </li>
-
+        
         <!-- Admin / HR -->
         <li class="submenu">
           <a href="#">
@@ -169,7 +170,70 @@ function isActiveRoute($routeName)
                         <li><a href="{{ route('add.leadstatus') }}" class="{{ isActiveRoute('add.leadstatus') }}"><span>Lead Status</span></a></li>
                        
                     </ul>
-                </li>   
+                </li>
+                <?php }?>   
+                <?php 
+                if($user->role == 3){
+                ?>
+        <!-- Sales -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-18.png') }}" alt="icon">
+            <span>Sales & Client </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Client Leads</a></li>
+            <li><a href="#">Applications Tracking</a></li>
+            <li><a href="#">Payment Collection</a></li>
+            <li><a href="#">Commission Reports</a></li>
+            <li><a href="#">Vacancy Access</a></li>
+            <li><a href="#">Sales Analytics</a></li>
+          </ul>
+        </li>
+     <?php }?>   
+     <?php 
+                if($user->role == 5){
+                ?>
+        <!-- Finance -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-7.png') }}" alt="icon">
+            <span>Finance</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Payment Verification & Reconciliation</a></li>
+            <li><a href="#">Payment Records</a></li>
+            <li><a href="#">Salary Structure</a></li>
+            <li><a href="#">Commission Structure</a></li>
+            <li><a href="#">Financial Reporting</a></li>
+            <li><a href="#">Budgeting & Forecasting</a></li>
+            <li><a href="#">Audit Trail</a></li>
+          </ul>
+        </li>
+     <?php }?>   
+      <?php 
+                if($user->role == 4){
+                ?>
+         <!-- Marketing -->
+        <li class="submenu">
+          <a href="#">
+            <img src="{{ asset('assets/img/sidebar/icon-18.png') }}" alt="icon">
+            <span>Marketing</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="list-unstyled" style="display:none;">
+            <li><a href="#">Vacancy Management</a></li>
+            <li><a href="#">External Company Communication</a></li>
+            <li><a href="#">Interview Arrangements</a></li>
+            <li><a href="#">Social Media Planner</a></li>
+            <li><a href="#">Daily Social Media Work</a></li>
+            <li><a href="#">Performance Analytics</a></li>
+            <li><a href="#">Resource Library</a></li>
+          </ul>
+        </li>
+     <?php }?>   
             </ul>
         </div>
     </div>

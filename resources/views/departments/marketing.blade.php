@@ -1,6 +1,3 @@
-@extends('layouts.app-lite')
-@section('title','Marketing Dashboard')
-@section('content')
 
 <div class="row">
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Open Vacancies</div><div class="value">21</div></div><i class="fas fa-briefcase text-primary"></i></div></div>
@@ -46,4 +43,4 @@
     plotOptions:{ bar:{ columnWidth:'45%' } }, dataLabels:{ enabled:false }, legend:{ show:false }
   }).render();
 </script>
-@endsection
+

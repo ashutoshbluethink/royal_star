@@ -1,7 +1,3 @@
-@extends('layouts.app-lite')
-@section('title','Sales Dashboard')
-@section('content')
-
 <div class="row">
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Active Leads</div><div class="value">1,250</div></div><i class="fas fa-user-plus text-primary"></i></div></div>
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Collections (MTD)</div><div class="value">AED 480K</div></div><i class="fas fa-coins text-success"></i></div></div>
@@ -62,4 +58,4 @@
     legend:{ position:'bottom' }, plotOptions:{ pie:{ donut:{ labels:{ show:true }}}}
   }).render();
 </script>
-@endsection
+

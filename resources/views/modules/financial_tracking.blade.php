@@ -1,7 +1,8 @@
+@extends('layouts.app')
 @extends('layouts.app-lite')
 @section('title','Financial Tracking')
 @section('content')
-
+<div class="page-wrapper">
 <div class="row">
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Today Collections</div><div class="value">AED 18,500</div></div><i class="fas fa-sack-dollar text-success"></i></div></div>
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Today Refunds</div><div class="value">AED 1,000</div></div><i class="fas fa-rotate-left text-danger"></i></div></div>
@@ -31,7 +32,7 @@
   <div class="col-lg-6 mb-3"><div class="card-modern"><div class="card-header">Commission (MTD by Rep)</div><div class="card-body"><div id="ft_comm"></div></div></div></div>
   <div class="col-lg-6 mb-3"><div class="card-modern"><div class="card-header">Budget vs Actual (Dept)</div><div class="card-body"><div id="ft_budget"></div></div></div></div>
 </div>
-
+</div>
 <script>
   new ApexCharts(document.querySelector('#ft_day'), {
     chart:{ type:'donut', height:280 }, series:[18500,1000], labels:['Collections','Refunds'], legend:{position:'bottom'}, plotOptions:{pie:{donut:{labels:{show:true}}}}

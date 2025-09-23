@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>BT-Login</title>
+	<title>Royal-Star-Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -47,7 +47,7 @@
 	<div class="main-wrapper">
 		<div class="account-page">
 			<div class="container">
-				<h3 class="account-title text-white">BT-Login</h3>
+				<h3 class="account-title text-white">Royal-Star-Login</h3>
 				<div class="account-box">
 					<div class="account-wrapper">
 						<div class="account-logo">

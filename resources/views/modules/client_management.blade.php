@@ -1,7 +1,8 @@
+@extends('layouts.app')
 @extends('layouts.app-lite')
 @section('title','Client Management')
 @section('content')
-
+<div class="page-wrapper">
 <div class="row">
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Total Clients</div><div class="value">3,240</div></div><i class="fas fa-users text-primary"></i></div></div>
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">In Progress</div><div class="value">142</div></div><i class="fas fa-spinner text-info"></i></div></div>
@@ -31,7 +32,7 @@
   <div class="col-lg-6 mb-3"><div class="card-modern"><div class="card-header">Pipeline</div><div class="card-body"><div id="cm_pipe"></div></div></div></div>
   <div class="col-lg-6 mb-3"><div class="card-modern"><div class="card-header">Lead Sources</div><div class="card-body"><div id="cm_sources"></div></div></div></div>
 </div>
-
+</div>
 <script>
   new ApexCharts(document.querySelector('#cm_pipe'), {
     chart:{ type:'bar', height:300, stacked:true, toolbar:{show:false} },

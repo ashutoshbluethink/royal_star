@@ -1,12 +1,11 @@
 @extends('layouts.app')
-
 @section('content')
 @section('title', 'Dashboard')
 
 <div class="page-wrapper">
 	<div class="content container-fluid">
 
-		<div class="page-header">
+		<!-- <div class="page-header">
 			<div class="row">
 				<div class="col-md-6">
 					<h3 class="page-title mb-0">Dashboard</h3>
@@ -18,27 +17,36 @@
 						<li class="breadcrumb-item"><span>Dashboard</span></li>
 					
 					</ul>
-					<!--<p><i aria-hidden="true" class="fas fa-calendar-alt"></i> December 6, 2018</p>-->
+					
 				</div>
 			</div>
-		</div>
-		<!--<p style="color: red;">Due to scheduled maintenance, the site will be undergoing maintenance from 7 PM to 11 PM. During this period, you may experience disruptions on various pages, such as <span style="color: blue;">lead addition</span>, <span style="color: blue;">user addition</span>, etc.</p>-->
+		</div> -->
+
 
 		<!--
 		|--------------------------------------------------------------------------
 		| sales team Dashboard
 		|--------------------------------------------------------------------------
 		-->
-			@if ($user->role == 4)
-				@include('dashboard.salesTeamDashboard')
+			@if ($user->role == 3)
+				<!-- @include('dashboard.salesTeamDashboard') -->
+				@include('departments.sales')
 		
 		<!--
 		|--------------------------------------------------------------------------
-		| Interviee Dashboard
+		| sales Dashboard
 		|--------------------------------------------------------------------------
 		-->
-			@elseif ($user->role == 3)
-				@include('dashboard.IntervieeTeamDashboard')
+			@elseif ($user->role == 4)
+				@include('departments.marketing')
+
+		<!--
+		|--------------------------------------------------------------------------
+		| Finance Dashboard
+		|--------------------------------------------------------------------------
+		-->
+			@elseif ($user->role == 5)
+				@include('departments.finance')
 		<!--
 		|--------------------------------------------------------------------------
 		| EmailExtractor
@@ -72,7 +80,7 @@
 	</div>
 
 </div>
-<script>
+<!-- <script>
 	$(function () {
 		$("#example1").DataTable({
 			"responsive": true,
@@ -84,6 +92,6 @@
 	});
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> -->
 @endsection
 

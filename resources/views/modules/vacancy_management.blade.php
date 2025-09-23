@@ -1,7 +1,8 @@
+@extends('layouts.app')
 @extends('layouts.app-lite')
 @section('title','Vacancy Management')
 @section('content')
-
+<div class="page-wrapper">
 <div class="row">
   <div class="col-md-4 mb-3"><div class="kpi"><div><div class="title">Open</div><div class="value">21</div></div><i class="fas fa-circle-dot text-primary"></i></div></div>
   <div class="col-md-4 mb-3"><div class="kpi"><div><div class="title">Interviewing</div><div class="value">8</div></div><i class="far fa-comments text-info"></i></div></div>
@@ -34,7 +35,7 @@
 
   <div class="col-lg-5 mb-3"><div class="card-modern"><div class="card-header">Fill Rate (MTD)</div><div class="card-body"><div id="vm_fill"></div></div></div></div>
 </div>
-
+</div>
 <script>
   new ApexCharts(document.querySelector('#vm_fill'), {
     chart:{ type:'line', height:280, toolbar:{show:false} },

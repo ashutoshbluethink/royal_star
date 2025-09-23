@@ -1,7 +1,3 @@
-@extends('layouts.app-lite')
-@section('title','Finance Dashboard')
-@section('content')
-
 <div class="row">
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Collections (Today)</div><div class="value">AED 18,500</div></div><i class="fas fa-sack-dollar text-success"></i></div></div>
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Refunds (Today)</div><div class="value">AED 1,000</div></div><i class="fas fa-rotate-left text-danger"></i></div></div>
@@ -39,4 +35,3 @@
     legend:{position:'bottom'}, plotOptions:{ pie:{ donut:{ labels:{show:true}}}}
   }).render();
 </script>
-@endsection

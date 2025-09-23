@@ -1,7 +1,5 @@
-@extends('layouts.app-lite')
-@section('title','Super User Dashboard')
 
-@section('content')
+
 <div class="row">
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Active Users</div><div class="value">128</div></div><i class="fas fa-users text-primary"></i></div></div>
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">MTD Revenue</div><div class="value">AED 1.20M</div></div><i class="fas fa-coins text-success"></i></div></div>
@@ -141,4 +139,4 @@
     dataLabels:{ enabled:false }, stroke:{ curve:'smooth', width:3 }, fill:{ opacity:.25 }, legend:{ position:'bottom' }
   }).render();
 </script>
-@endsection
+

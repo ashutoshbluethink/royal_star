@@ -1,7 +1,8 @@
+@extends('layouts.app')
 @extends('layouts.app-lite')
 @section('title','Reporting & Analytics')
 @section('content')
-
+<div class="page-wrapper">
 <div class="row">
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">KPI Coverage</div><div class="value">61%</div></div><i class="fas fa-bullseye text-primary"></i></div></div>
   <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Exports (30d)</div><div class="value">54</div></div><i class="fas fa-file-export text-info"></i></div></div>
@@ -24,7 +25,7 @@
     </ul>
   </div>
 </div>
-
+</div>
 <script>
   new ApexCharts(document.querySelector('#ra_rev_cost'), {
     chart:{ type:'area', height:280, toolbar:{show:false} },

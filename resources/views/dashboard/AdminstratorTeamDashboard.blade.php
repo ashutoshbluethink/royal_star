@@ -1,3 +1,16 @@
+@extends('layouts.app-lite')
+<script>
+  // Super User Overview chart (demo)
+  new ApexCharts(document.querySelector('#su_chart_overview'), {
+    chart:{ type:'area', height:280, toolbar:{show:false} },
+    series:[
+      { name:'Revenue', data:[120,150,180,210,260,300,330] },
+      { name:'Costs', data:[80,100,115,130,150,165,170] }
+    ],
+    xaxis:{ categories:['Jan','Feb','Mar','Apr','May','Jun','Jul'] },
+    dataLabels:{ enabled:false }, stroke:{ curve:'smooth', width:3 }, fill:{ opacity:.25 }, legend:{ position:'bottom' }
+  }).render();
+</script>
 <!--
     |--------------------------------------------------------------------------
     | Royal Star • Admin / Super User Dashboard
@@ -54,11 +67,17 @@
   @media (max-width:575.98px){ .span-6, .span-4{ grid-column: span 2; } }
 </style>
 
-<div class="mod-grid">
+<div class="row">
+  <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Active Users</div><div class="value">128</div></div><i class="fas fa-users text-primary"></i></div></div>
+  <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">MTD Revenue</div><div class="value">AED 1.20M</div></div><i class="fas fa-coins text-success"></i></div></div>
+  <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Open Vacancies</div><div class="value">21</div></div><i class="fas fa-briefcase text-warning"></i></div></div>
+  <div class="col-md-3 mb-3"><div class="kpi"><div><div class="title">Tickets Open</div><div class="value">12</div></div><i class="fas fa-ticket text-danger"></i></div></div>
+</div>
 
-  {{-- 1) Department Dashboards --}}
+<div class="mod-grid">
+  {{-- Department Dashboards --}}
   <div class="mod-card span-6" style="--grad:#4f46e5; --icon-bg:#4f46e5;">
-    <div class="ink"></div>
+    <div class="mod-ink"></div>
     <div class="mod-body">
       <div class="mod-top">
         <div class="mod-icon"><i class="fas fa-table-columns"></i></div>
@@ -66,89 +85,72 @@
           <h5 class="mod-title">Department Dashboards</h5>
           <div class="mod-sub">Sales • Admin • Finance • Marketing • IT • Deployment • Drivers</div>
         </div>
-        <span class="ml-auto badge badge-soft">7 spaces</span>
+        <span class="ml-auto chip">7 spaces</span>
       </div>
       <div class="mod-kpis">
-        <div class="mini"><i class="far fa-eye mr-1"></i> Active users: <strong>128</strong></div>
-        <div class="mini"><i class="far fa-clock mr-1"></i> Avg load: <strong>0.8s</strong></div>
+        <div class="mini"><i class="far fa-eye mr-1"></i> Adoption: <strong>72%</strong></div>
         <div class="mini"><i class="far fa-bell mr-1"></i> Alerts: <strong>3</strong></div>
       </div>
-      <div class="bar" style="--v:72%; --b1:#818cf8; --b2:#22d3ee"></div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="text-muted small">Adoption</div>
-        <div class="text-dark small font-weight-600">72%</div>
-      </div>
+      <div class="bar"><i style="--v:72%; --b1:#818cf8; --b2:#22d3ee"></i></div>
       <div class="mod-actions mt-3">
-        <a href="#/dept/sales" class="btn btn-primary btn-sm"><i class="fas fa-chart-line mr-1"></i> Open Sales</a>
-        <a href="#/dept/finance" class="btn btn-outline-primary btn-sm">Finance</a>
-        <a href="#/dept/marketing" class="btn btn-outline-primary btn-sm">Marketing</a>
+        <a href="{{ url('#') }}" class="btn btn-primary btn-sm"><i class="fas fa-chart-line mr-1"></i> Sales</a>
+        <a href="{{ url('#') }}" class="btn btn-outline-primary btn-sm">Finance</a>
+        <a href="{{ url('#') }}" class="btn btn-outline-primary btn-sm">Marketing</a>
       </div>
     </div>
   </div>
 
-  {{-- 2) Client Management --}}
+  {{-- Client Management --}}
   <div class="mod-card span-6" style="--grad:#16a34a; --icon-bg:#16a34a;">
-    <div class="ink"></div>
+    <div class="mod-ink"></div>
     <div class="mod-body">
       <div class="mod-top">
         <div class="mod-icon"><i class="fas fa-user-check"></i></div>
         <div>
           <h5 class="mod-title">Client Management</h5>
-          <div class="mod-sub">From application to deployment, all in one place</div>
+          <div class="mod-sub">From application → deployment</div>
         </div>
-        <span class="ml-auto badge badge-soft-green">SLA 24h</span>
+        <span class="ml-auto chip">SLA 24h</span>
       </div>
       <div class="mod-kpis">
         <div class="mini"><i class="far fa-folder-open mr-1"></i> In Progress: <strong>142</strong></div>
-        <div class="mini"><i class="far fa-file mr-1"></i> New Today: <strong>18</strong></div>
         <div class="mini"><i class="far fa-check-circle mr-1"></i> Approved: <strong>76%</strong></div>
       </div>
-      <div class="bar" style="--v:56%; --b1:#34d399; --b2:#60a5fa"></div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="text-muted small">Pipeline Health</div>
-        <div class="text-dark small font-weight-600">56%</div>
-      </div>
+      <div class="bar"><i style="--v:56%; --b1:#34d399; --b2:#60a5fa"></i></div>
       <div class="mod-actions mt-3">
-        <a href="#/clients" class="btn btn-success btn-sm"><i class="fas fa-users mr-1"></i> View Clients</a>
-        <a href="#/applications/new" class="btn btn-outline-success btn-sm">+ New Application</a>
-        <a href="#/documents" class="btn btn-outline-success btn-sm">Documents</a>
+        <a href="{{ url('/module/client-management') }}" class="btn btn-success btn-sm"><i class="fas fa-users mr-1"></i> Open</a>
+        <a href="#" class="btn btn-outline-success btn-sm">+ New Application</a>
       </div>
     </div>
   </div>
 
-  {{-- 3) Financial Tracking --}}
+  {{-- Financial Tracking --}}
   <div class="mod-card span-6" style="--grad:#0ea5e9; --icon-bg:#0ea5e9;">
-    <div class="ink"></div>
+    <div class="mod-ink"></div>
     <div class="mod-body">
       <div class="mod-top">
         <div class="mod-icon"><i class="fas fa-file-invoice-dollar"></i></div>
         <div>
           <h5 class="mod-title">Financial Tracking</h5>
-          <div class="mod-sub">Payments, reconciliation, and commission controls</div>
+          <div class="mod-sub">Payments • Reports • Commissions</div>
         </div>
-        <span class="ml-auto badge badge-soft-amber">Pending 9</span>
+        <span class="ml-auto chip">Pending 9</span>
       </div>
       <div class="mod-kpis">
-        <div class="mini"><i class="fas fa-sack-dollar mr-1"></i> Collections (Today): <strong>AED 18,500</strong></div>
+        <div class="mini"><i class="fas fa-sack-dollar mr-1"></i> Today: <strong>AED 18,500</strong></div>
         <div class="mini"><i class="fas fa-rotate-left mr-1"></i> Refunds: <strong>AED 1,000</strong></div>
-        <div class="mini"><i class="fas fa-percent mr-1"></i> Commission (MTD): <strong>AED 190K</strong></div>
       </div>
-      <div class="bar" style="--v:68%; --b1:#38bdf8; --b2:#22c55e"></div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="text-muted small">Reconciliation</div>
-        <div class="text-dark small font-weight-600">68% complete</div>
-      </div>
+      <div class="bar"><i style="--v:68%; --b1:#38bdf8; --b2:#22c55e"></i></div>
       <div class="mod-actions mt-3">
-        <a href="#/finance" class="btn btn-info btn-sm text-white"><i class="fas fa-wallet mr-1"></i> Finance Hub</a>
-        <a href="#/finance/verify" class="btn btn-outline-info btn-sm">Verify Payments</a>
-        <a href="#/finance/commissions" class="btn btn-outline-info btn-sm">Commissions</a>
+        <a href="{{ url('/module/financial-tracking') }}" class="btn btn-info btn-sm text-white"><i class="fas fa-wallet mr-1"></i> Open</a>
+        <a href="#" class="btn btn-outline-info btn-sm">Verify</a>
       </div>
     </div>
   </div>
 
-  {{-- 4) Vacancy Management --}}
+  {{-- Vacancy Management --}}
   <div class="mod-card span-6" style="--grad:#ea580c; --icon-bg:#ea580c;">
-    <div class="ink"></div>
+    <div class="mod-ink"></div>
     <div class="mod-body">
       <div class="mod-top">
         <div class="mod-icon"><i class="fas fa-briefcase"></i></div>
@@ -156,57 +158,43 @@
           <h5 class="mod-title">Vacancy Management</h5>
           <div class="mod-sub">Shared portal for Marketing ↔ Sales</div>
         </div>
-        <span class="ml-auto badge badge-soft">Sync on</span>
+        <span class="ml-auto chip">Sync on</span>
       </div>
       <div class="mod-kpis">
         <div class="mini"><i class="far fa-circle-dot mr-1"></i> Open: <strong>21</strong></div>
         <div class="mini"><i class="far fa-comments mr-1"></i> Interviewing: <strong>8</strong></div>
-        <div class="mini"><i class="far fa-circle-check mr-1"></i> Filled (MTD): <strong>9</strong></div>
       </div>
-      <div class="bar" style="--v:44%; --b1:#fb923c; --b2:#f472b6"></div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="text-muted small">Fill Rate</div>
-        <div class="text-dark small font-weight-600">44% this month</div>
-      </div>
+      <div class="bar"><i style="--v:44%; --b1:#fb923c; --b2:#f472b6"></i></div>
       <div class="mod-actions mt-3">
-        <a href="#/vacancies" class="btn btn-warning btn-sm text-white"><i class="fas fa-list mr-1"></i> View Vacancies</a>
-        <a href="#/vacancies/kanban" class="btn btn-outline-warning btn-sm">Kanban</a>
-        <a href="#/vacancies/new" class="btn btn-outline-warning btn-sm">+ New</a>
+        <a href="{{ url('/module/vacancy-management') }}" class="btn btn-warning btn-sm text-white"><i class="fas fa-list mr-1"></i> Open</a>
+        <a href="#" class="btn btn-outline-warning btn-sm">Kanban</a>
       </div>
     </div>
   </div>
 
-  {{-- 5) Reporting & Analytics --}}
+  {{-- Reporting & Analytics (full width) --}}
   <div class="mod-card span-12" style="--grad:#6d28d9; --icon-bg:#6d28d9;">
-    <div class="ink"></div>
+    <div class="mod-ink"></div>
     <div class="mod-body">
       <div class="mod-top">
         <div class="mod-icon"><i class="fas fa-chart-pie"></i></div>
         <div>
           <h5 class="mod-title">Reporting & Analytics</h5>
-          <div class="mod-sub">Unified KPIs across departments for data-driven decisions</div>
+          <div class="mod-sub">Unified KPIs across departments</div>
         </div>
-        <span class="ml-auto badge badge-soft">Exports</span>
+        <span class="ml-auto chip">Exports</span>
       </div>
-      <div class="mod-kpis">
-        <div class="mini"><i class="far fa-file-excel mr-1"></i> Weekly Exec Pack</div>
-        <div class="mini"><i class="far fa-chart-bar mr-1"></i> KPI Scorecards</div>
-        <div class="mini"><i class="far fa-download mr-1"></i> PDF / Excel</div>
-      </div>
-      <div class="bar" style="--v:61%; --b1:#a78bfa; --b2:#60a5fa"></div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="text-muted small">Coverage</div>
-        <div class="text-dark small font-weight-600">61% of metrics wired</div>
-      </div>
-      <div class="mod-actions mt-3">
-        <a href="#/reports" class="btn btn-primary btn-sm"><i class="fas fa-chart-line mr-1"></i> Open Reports</a>
-        <a href="#/reports/export?fmt=pdf" class="btn btn-outline-primary btn-sm">Export PDF</a>
-        <a href="#/reports/export?fmt=xlsx" class="btn btn-outline-primary btn-sm">Export Excel</a>
+      <div id="su_chart_overview" style="height:280px;"></div>
+      <div class="mod-actions mt-2">
+        <a href="{{ url('/module/reporting-analytics') }}" class="btn btn-primary btn-sm"><i class="fas fa-chart-line mr-1"></i> Open</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Export PDF</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Export Excel</a>
       </div>
     </div>
   </div>
-
 </div>
+
+
 
 <div class="row">
   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
